@@ -1,0 +1,14 @@
+Ext.define('OrderMealAdmin.view.UserPanel',{
+	extend:'Ext.panel.Panel',
+	alias:'widget.UserPanel',
+	title:'餐厅管理',
+	width:"100%",
+	height:'100%',
+	layout:'fit',
+	dockedItems:[{
+		xtype:'UserSearchForm'
+	}],
+	items:[{
+		xtype:'UserGrid'
+	}]
+});

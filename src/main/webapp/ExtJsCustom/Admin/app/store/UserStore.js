@@ -1,0 +1,15 @@
+Ext.define("OrderMealAdmin.store.UserStore",{
+	extend:'Ext.data.Store',
+	model:'OrderMealAdmin.model.UserModel',
+	proxy:{
+		type:'ajax',
+		limitParam:'pageSize',
+		url:'/CommonOrderMealWepApp_Maven/admin/GetPagingUsers.html',
+		reader:{
+			type:'json',
+			root:'rows',
+			totalProperty:'results'
+		}
+	},
+	autoLoad:true
+});

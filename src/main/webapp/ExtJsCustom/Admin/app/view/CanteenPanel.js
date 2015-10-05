@@ -1,0 +1,14 @@
+Ext.define('OrderMealAdmin.view.CanteenPanel',{
+	extend:'Ext.panel.Panel',
+	alias:'widget.CanteenPanel',
+	title:'餐厅管理',
+	width:"100%",
+	height:'100%',
+	layout:'fit',
+	dockedItems:[{
+		//xtype:'teachersearchform'
+	}],
+	items:[{
+		xtype:'teachergrid'
+	}]
+});

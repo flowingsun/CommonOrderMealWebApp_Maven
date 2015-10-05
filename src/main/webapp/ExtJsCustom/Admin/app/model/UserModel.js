@@ -1,0 +1,14 @@
+Ext.define('OrderMealAdmin.model.UserModel',{
+	extend:'Ext.data.Model',
+	fields:[
+		{name:'user.id',mapping:'userID',type:'int'},
+		{name:'user.userName',mapping:'userName',type:'string'},
+		{name:'user.postion',mapping:'postion',type:'string'},
+		{name:'user.telephone',mapping:'telePhone',type:'string'},
+		{name:'user.email',mapping:'email',type:'string'},
+		{name:'user.sex',mapping:'sex',type:'string'},
+		{name:'user.userLocation',mapping:'userLocation',type:'string'},
+		{name:'user.birthday',mapping:'birthday',type:'date',dataFormat:'YYYY-MM-dd'},
+		{name:'user.userState',mapping:'userState',type:'boolean'}
+	]
+});

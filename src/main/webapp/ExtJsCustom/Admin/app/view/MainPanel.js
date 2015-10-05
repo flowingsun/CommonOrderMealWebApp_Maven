@@ -1,0 +1,45 @@
+Ext.define("OrderMealAdmin.view.MainPanel",{
+	extend:'Ext.panel.Panel',
+	alias:"widget.mainpanel",
+	id:"MainPanel",
+	title:'订餐系统',
+	layout:'border',
+	initComponent:function(){
+		this.callParent(arguments);
+	},
+	defaults:{
+		split:true//边界处会有小的箭头	
+	},
+	items:[{
+		frame:true,
+		region:'west',
+		xtype:'panel',
+		title:'操作列表',
+		margins:'5 2 5 5',
+		width:250,
+		height:700,
+		layout:"fit",
+		//floating:true,
+		collapsible:true,
+		id:'west-panel',
+		items:[{
+			border:false,
+			xtype:'SysMenuTree'
+		}]
+	},{
+		region:"center",
+		id:'center-panel',
+		//floating:true,
+		xtype:'tabpanel',
+		layout:'fit',
+		//frame:true,
+		margins:'5 2 5 10',
+		items:[{
+			border:0,
+			html:"<iframe src='' style='width:100%;height:100%;border:0'></iframe>",
+			xtype:'panel',
+			title:'百度',
+			closable:true
+		}]
+	}]
+});

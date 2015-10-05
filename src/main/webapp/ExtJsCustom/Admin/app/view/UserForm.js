@@ -1,0 +1,57 @@
+Ext.define('OrderMealAdmin.view.UserForm',{
+    extend:'Ext.form.Panel',
+    alias:'widget.UserForm',
+    border:0,
+    bodyPadding:'5',
+    height:250,
+    bodyStyle:"background:#DFE9F6",
+    width:450,
+    frame:true,
+    items:[{
+    	xtype:'fieldset',
+    	title:'用户信息',
+	    defaults:{
+	        labelSeparator:':',
+	        margin:'10 5 5 5',
+	        labelWidth:60,
+	        width:400,
+	        allowBlank:false,
+	        msgTarget:'side',
+	        labelAlign:'left'
+	    },
+		items:[{
+			xtype:'textfield',
+	        fieldLabel:'id',
+	        allowBlank:true,
+	        name:'user.id',
+	        disabled:true
+	    },{
+	    	xtype:'textfield',
+	    	fieldLabel:'姓名',
+	    	name:'user.userName'
+	    },{
+	        xtype:'datefield',
+	        fieldLabel:'出生日期',
+	        name:'user.birthday',
+	    	format:'Y-n-j'
+	    },{
+	        xtype:'combobox',
+	        name:'user.sex',
+	        fieldLabel:'性别',
+	        editable:false,
+	        store:Ext.create('Ext.data.Store',{
+	        	fields: ['str', 'value'],
+		    data : [
+		    	{str:'男',value:'男'},
+		    	{str:'女',value:'女'}
+		    ]
+	        }),
+	    	valueField: 'value',
+	    	displayField:'str'
+	    },{
+		    xtype:'textfield',
+		    editable:false,
+		    name:'user.userLocation',
+		    fieldLabel:'所在地点'
+	    }]}
+   ]});

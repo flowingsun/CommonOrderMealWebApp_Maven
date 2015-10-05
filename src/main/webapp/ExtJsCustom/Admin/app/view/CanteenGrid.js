@@ -1,0 +1,31 @@
+Ext.define('OrderMealAdmin.view.CanteenGrid',{
+	extend:'Ext.grid.Panel',
+	alias:'widget.CanteenGrid',
+	store:'CanteenStore',
+	height:	540,
+	width:500,
+	selType:'checkboxmodel',
+	multiSelect:true,
+	columnLines:true,//表格的竖线
+	initComppnent:function(){
+		this.callParent(arguments);
+	},
+	border:0,
+	columns:[
+		{text:'id',dataIndex:'teacher.id',width:100},
+		{text:'姓名',dataIndex:'teacher.name',width:140},
+		{text:'出生日期',dataIndex:'teacher.birthday',renderer:Ext.util.Format.dateRenderer('Y-n-j'),width:150},
+		{text:'性别',dataIndex:'teacher.gender',width:100},
+		{text:'权限',dataIndex:'teacher.root',width:100},
+		{text:'是否激活',dataIndex:'teacher.isActive',width:150,xtype:'booleancolumn',trueText:'已激活',falseText:'未激活'},
+		{text:'所属学院',dataIndex:'teacher.institute.name',width:150}
+	],
+	tbar:[
+		{xtype:'button',text:'添加',icon:'image/add.png'},
+		{xtype:'button',text:'修改',icon:'image/cog_edit.png',disabled:true},
+		{xtype:'button',text:'删除',icon:'image/cross.gif'}
+	],
+	dockedItems:[
+		{xtype:'pagingtoolbar',store:'TeacherStore',displayInfo:true,dock:'bottom'}
+	]
+});

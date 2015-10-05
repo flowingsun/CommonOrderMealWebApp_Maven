@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="CommonOrderMealWepApp_Maven"
+  id="myeclipse.1394891680024"
+  context-root="/CommonOrderMealWepApp_Maven"
+  j2ee-spec="6.0"
+  archive="CommonOrderMealWepApp_Maven.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+
