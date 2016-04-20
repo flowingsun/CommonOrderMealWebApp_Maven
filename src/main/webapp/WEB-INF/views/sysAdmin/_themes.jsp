@@ -7,7 +7,8 @@
 %>
 
 <script type="text/javascript">
-	var Goble_UserName = '${user.userName}';
+	var Golbal_UserName = '${user.userName}';
+	var Golbal_BasePath = '<%=basePath2%>'; 
 </script>
 <script type="text/javascript"
 	src="<%=basePath2%>Resources/JavaScripts/json2.js"></script>

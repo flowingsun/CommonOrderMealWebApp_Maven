@@ -1,14 +1,15 @@
 Ext.define('OrderMealAdmin.model.UserModel',{
 	extend:'Ext.data.Model',
 	fields:[
-		{name:'user.id',mapping:'userID',type:'int'},
-		{name:'user.userName',mapping:'userName',type:'string'},
-		{name:'user.postion',mapping:'postion',type:'string'},
-		{name:'user.telephone',mapping:'telePhone',type:'string'},
-		{name:'user.email',mapping:'email',type:'string'},
-		{name:'user.sex',mapping:'sex',type:'string'},
-		{name:'user.userLocation',mapping:'userLocation',type:'string'},
-		{name:'user.birthday',mapping:'birthday',type:'date',dataFormat:'YYYY-MM-dd'},
-		{name:'user.userState',mapping:'userState',type:'boolean'}
+		{name:'userID',mapping:'userID',type:'int'},
+		{name:'userName',mapping:'userName',type:'string'},
+		{name:'loginname',mapping:'loginname',type:'string'},
+		{name:'postion',mapping:'postion',type:'string'},
+		{name:'telePhone',mapping:'telePhone',type:'string'},
+		{name:'email',mapping:'email',type:'string'},
+		{name:'sex',mapping:'sex',type:'string'},
+		{name:'userLocation',mapping:'userLocation',type:'string'},
+		{name:'birthday',mapping:'birthday',type:'date',dataFormat:'YYYY-MM-dd'},
+		{name:'userState',mapping:'userState',type:'int'}
 	]
 });

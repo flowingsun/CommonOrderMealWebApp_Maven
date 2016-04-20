@@ -3,15 +3,15 @@ package com.flowingsun.webapp.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.ws.Response;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.flowingsun.webapp.dao.SysBaseDao;
 import com.flowingsun.webapp.domain.SysMenu;
 
 @Service("sysBaseService")
+@Transactional
 public class SysBaseServiceImpl implements SysBaseService {
 
 	@Autowired

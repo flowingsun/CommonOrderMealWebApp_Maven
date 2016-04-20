@@ -25,7 +25,7 @@ import com.flowingsun.webapp.service.UserService;
 import com.flowingsun.webapp.util.Encryption;
 
 @Controller
-public class sysAdmin_MainController {
+public class SysAdmin_MainController {
 	@Autowired
 	UserService userService;
 	@Autowired
@@ -34,7 +34,7 @@ public class sysAdmin_MainController {
 	@RequestMapping("/admin_login/login")
 	public ModelAndView LoginAction() throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("/WEB-INF/views/sysAdmin/login");
+		mav.setViewName("/sysAdmin/login");
 		mav.addObject("testmd5", Encryption.getMD5("test"));
 		return mav;
 	}
@@ -52,7 +52,7 @@ public class sysAdmin_MainController {
 	@RequestMapping("/admin/logout")
 	public ModelAndView Logout(HttpServletRequest request) throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("/WEB-INF/views/sysAdmin/login");
+		mav.setViewName("/sysAdmin/login");
 		HttpSession session = request.getSession();
 		session.removeAttribute("user");
 		return mav;
@@ -61,7 +61,7 @@ public class sysAdmin_MainController {
 	@RequestMapping("/admin/index")
 	public ModelAndView IndexAction() throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("/WEB-INF/views/sysAdmin/index");
+		mav.setViewName("/sysAdmin/index");
 		return mav;
 	}
 

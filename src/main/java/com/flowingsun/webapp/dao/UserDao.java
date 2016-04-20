@@ -52,14 +52,15 @@ public interface UserDao {
 	
 	/**
 	 * @param 用户对象
-	 * @description 根据用户对象删除数据
-	 */
-	public void Delete(User user);
-	
-	
-	/**
-	 * @param 用户对象
 	 * @description 根据用户对象新增数据
 	 */
 	public void Save(User user); 
+	
+	/**
+	 * @param userIds用户id
+	 * @param state状态代码
+	 * @author flowingsun
+	 * @description 根据用户ID更新用户状态
+	 */
+	public void UpdateUserStateByUserIds(String userIds,int state);
 }

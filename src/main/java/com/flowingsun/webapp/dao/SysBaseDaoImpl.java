@@ -6,25 +6,29 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.flowingsun.webapp.domain.SysMenu;
 
 @Repository("sysBaseDaoImpl")
+@Transactional(rollbackFor=Throwable.class)
 public class SysBaseDaoImpl implements SysBaseDao {
 	
 	@Autowired
 	private SessionFactory sessionFactory;
+	@Autowired
+	private BaseDao<SysMenu> baseDao;
 	
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<SysMenu> GetAllSysMenu() {
-		Session session = sessionFactory.openSession();
+		Session session = sessionFactory.getCurrentSession();
 		org.hibernate.Query query = session
 				.createQuery("from SysMenu order by sort asc");
-		List<SysMenu> result = null;
-		if (query.list() != null && query.list().size() > 0) {
+		List<SysMenu> result = query.list();
+		/*if (result != null && result.size() > 0) {
 			result = (List<SysMenu>) query.list();
-		}
+		}*/
 		return result;
 	}
 	

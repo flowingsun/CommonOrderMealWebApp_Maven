@@ -30,9 +30,12 @@ public class SysAdmin_CheckLogin implements HandlerInterceptor {
 			HttpServletResponse response, Object handler) throws Exception {
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
+		String basePath = request.getScheme() + "://"
+				+ request.getServerName() + ":" + request.getServerPort()
+				+ request.getContextPath() + "/";
 		//过滤登陆页
 		if (user == null) {
-			response.sendRedirect("../admin_login/login.html");
+			response.sendRedirect(basePath+"admin_login/login.html");
 			return true;
 		}
 		return true;

@@ -1,0 +1,15 @@
+Ext.define("OrderMealAdmin.store.CanteenStore",{
+	extend:'Ext.data.Store',
+	model:'OrderMealAdmin.model.CanteenModel',
+	proxy:{
+		type:'ajax',
+		limitParam:'pageSize',
+		url:'/CommonOrderMealWepApp_Maven/admin/CanteenManage/GetPagingCanteens.html',
+		reader:{
+			type:'json',
+			root:'rows',
+			totalProperty:'results'
+		}
+	},
+	autoLoad:false
+});

@@ -55,15 +55,25 @@ public interface UserService {
 		
 		/**
 		 * @param 用户对象
-		 * @description 根据用户对象删除数据
-		 */
-		public void Delete(User user);
-		
-		
-		/**
-		 * @param 用户对象
+		 * @throws Exception 
 		 * @description 根据用户对象新增数据
 		 */
-		public void Save(User user); 
+		public void Save(User user) throws Exception; 
+		
+		/**
+		 * @param userIds用户id
+		 * @throws Exception
+		 * @author flowingsun
+		 * @description 冻结账户
+		 */
+		public void FreezeUsers(String userIds) throws Exception;
+		
+		/**
+		 * @param userIds用户id
+		 * @throws Exception
+		 * @author flowingsun
+		 * @description 启用账户
+		 */
+		public void ActiveUsers(String userIds) throws Exception;
 
 }

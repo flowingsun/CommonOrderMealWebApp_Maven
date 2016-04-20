@@ -6,9 +6,9 @@ Ext.define('OrderMealAdmin.view.CanteenPanel',{
 	height:'100%',
 	layout:'fit',
 	dockedItems:[{
-		//xtype:'teachersearchform'
+		xtype:'CanteenSearchForm'
 	}],
 	items:[{
-		xtype:'teachergrid'
+		xtype:'CanteenGrid'
 	}]
 });

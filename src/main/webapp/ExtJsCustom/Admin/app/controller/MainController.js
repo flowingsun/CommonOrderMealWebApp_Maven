@@ -18,16 +18,8 @@ Ext.define("OrderMealAdmin.controller.MainController",{
 							id : pageThemes,
 							closable : true,
 							title : menuName,
-							//html : menuName
 							xtype:pageThemes
 						}).show();
-						/*var newPanel=Ext.create(pageThemes,{
-							closable:true,
-							id:pageThemes,
-							title:menuName
-						});
-						tabs.add(newPanel);
-						tabs.setActiveTab(newPanel);*/
 					}
 				}
 			},

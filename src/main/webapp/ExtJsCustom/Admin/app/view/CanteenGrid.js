@@ -1,31 +1,65 @@
-Ext.define('OrderMealAdmin.view.CanteenGrid',{
-	extend:'Ext.grid.Panel',
-	alias:'widget.CanteenGrid',
-	store:'CanteenStore',
-	height:	540,
-	width:500,
-	selType:'checkboxmodel',
-	multiSelect:true,
-	columnLines:true,//表格的竖线
-	initComppnent:function(){
+Ext.define('OrderMealAdmin.view.CanteenGrid', {
+	extend : 'Ext.grid.Panel',
+	alias : 'widget.CanteenGrid',
+	store : 'CanteenStore',
+	height : 540,
+	width : 500,
+	selType : 'checkboxmodel',
+	multiSelect : true,
+	columnLines : true,// 表格的竖线
+	initComppnent : function() {
 		this.callParent(arguments);
 	},
-	border:0,
-	columns:[
-		{text:'id',dataIndex:'teacher.id',width:100},
-		{text:'姓名',dataIndex:'teacher.name',width:140},
-		{text:'出生日期',dataIndex:'teacher.birthday',renderer:Ext.util.Format.dateRenderer('Y-n-j'),width:150},
-		{text:'性别',dataIndex:'teacher.gender',width:100},
-		{text:'权限',dataIndex:'teacher.root',width:100},
-		{text:'是否激活',dataIndex:'teacher.isActive',width:150,xtype:'booleancolumn',trueText:'已激活',falseText:'未激活'},
-		{text:'所属学院',dataIndex:'teacher.institute.name',width:150}
-	],
-	tbar:[
-		{xtype:'button',text:'添加',icon:'image/add.png'},
-		{xtype:'button',text:'修改',icon:'image/cog_edit.png',disabled:true},
-		{xtype:'button',text:'删除',icon:'image/cross.gif'}
-	],
-	dockedItems:[
-		{xtype:'pagingtoolbar',store:'TeacherStore',displayInfo:true,dock:'bottom'}
-	]
+	border : 0,
+	columns : [ {
+		text : 'id',
+		dataIndex : 'canteenId',
+		width : 100,
+		locked : true
+	}, {
+		text : '餐厅名称',
+		dataIndex : 'canteenName',
+		width : 140,
+		locked : true
+	}, {
+		text : '创建日期',
+		dataIndex : 'createTime',
+		width : 150
+	}, {
+		text : '编辑日期',
+		dataIndex : 'editTime',
+		width : 150
+	}, {
+		text : '餐厅状态',
+		dataIndex : 'canteenStatus',
+		width : 150,
+		xtype : 'booleancolumn',
+		trueText : "<font color='green'>供应中</font>",
+		falseText : "<font color='red'>已停用</font>"
+	}, {
+		text : '餐厅描述',
+		dataIndex : 'description',
+		width : 300
+	} ],
+	tbar : [ {
+		xtype : 'button',
+		text : '添加',
+		icon : 'ExtJsCustom/images/user_add.png'
+	}, {
+		xtype : 'button',
+		text : '修改',
+		icon : 'ExtJsCustom/images/user_edit.png',
+		disabled : true
+	}, {
+		xtype : 'button',
+		text : '停用',
+		icon : 'ExtJsCustom/images/delete.gif',
+		disabled : true
+	} ],
+	dockedItems : [ {
+		xtype : 'pagingtoolbar',
+		store : 'CanteenStore',
+		displayInfo : true,
+		dock : 'bottom'
+	} ]
 });

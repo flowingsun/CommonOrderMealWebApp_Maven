@@ -55,7 +55,7 @@ public class User implements Serializable {
 
 	@Id
 	@GeneratedValue
-	@Column(name = "ID")
+	@Column(name = "ID", updatable = false)
 	public Long getUserID() {
 		return userID;
 	}
@@ -72,6 +72,7 @@ public class User implements Serializable {
 		this.userName = userName;
 	}
 
+	@Column(updatable = false)
 	public String getLoginname() {
 		return loginname;
 	}
@@ -80,7 +81,6 @@ public class User implements Serializable {
 		this.loginname = loginname;
 	}
 
-	
 	public String getUserPassword() {
 		return userPassword;
 	}
@@ -131,7 +131,8 @@ public class User implements Serializable {
 		this.sex = sex;
 	}
 
-	@JsonSerialize(using=CustomDateSerializer.class)
+	@JsonSerialize(using = CustomDateSerializer.class)
+	@Column(updatable = false)
 	public Date getBirthday() {
 		return birthday;
 	}
@@ -149,6 +150,7 @@ public class User implements Serializable {
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(updatable = false)
 	public Date getCreateTime() {
 		return createTime;
 	}
@@ -181,6 +183,7 @@ public class User implements Serializable {
 		this.onlineTime = onlineTime;
 	}
 
+	@Column(updatable = false)
 	public String getLastLoginIP() {
 		return lastLoginIP;
 	}
@@ -205,6 +208,7 @@ public class User implements Serializable {
 		this.userState = userState;
 	}
 
+	@Column(updatable = false)
 	public int getAdminLevelID() {
 		return adminLevelID;
 	}
@@ -213,6 +217,7 @@ public class User implements Serializable {
 		this.adminLevelID = adminLevelID;
 	}
 
+	@JsonIgnore
 	@OneToMany(targetEntity = MealOrder.class, fetch = FetchType.LAZY, cascade = { CascadeType.ALL }, mappedBy = "user")
 	public Set<MealOrder> getMealOrders() {
 		return mealOrders;

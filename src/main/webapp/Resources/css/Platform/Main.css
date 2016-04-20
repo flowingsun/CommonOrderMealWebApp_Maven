@@ -1,0 +1,14 @@
+.tag-info {
+	display: inline-block;
+	margin: 0 4px 4px 0;
+	padding: 0 8px;
+	color: #fff;
+	background: #88C5E1;
+	border-radius: 4px;
+}
+
+.tag-info:hover {
+	color: #fff;
+	background: #54abd4;
+	text-decoration: none;
+}

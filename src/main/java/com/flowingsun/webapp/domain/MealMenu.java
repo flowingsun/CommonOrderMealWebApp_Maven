@@ -1,0 +1,84 @@
+/**
+ * @author flowingsun
+ * @description 
+ */
+package com.flowingsun.webapp.domain;
+
+import java.util.Set;
+
+import javax.management.relation.Role;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+
+import org.hibernate.annotations.GenericGenerator;
+
+/**
+ * 
+ * @author flowingsun
+ * @description 菜单实体
+ */
+@Entity
+public class MealMenu {
+
+	private int mealMenuId;
+	private String menuName;
+	private int menuType;
+	private String description;
+	private Set<MealPackage> mealPackages;
+
+	@Id
+	// @GeneratedValue(generator = "system-uuid")
+	// @GenericGenerator(name = "system-uuid", strategy = "uuid")
+	@GeneratedValue
+	@Column(name = "ID", unique = true, nullable = false)
+	public int getMealMenuId() {
+		return mealMenuId;
+	}
+
+	public void setMealMenuId(int mealMenuId) {
+		this.mealMenuId = mealMenuId;
+	}
+
+	public String getMenuName() {
+		return menuName;
+	}
+
+	public void setMenuName(String menuName) {
+		this.menuName = menuName;
+	}
+
+	public int getMenuType() {
+		return menuType;
+	}
+
+	public void setMenuType(int menuType) {
+		this.menuType = menuType;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	@ManyToMany(targetEntity = MealPackage.class, fetch = FetchType.EAGER)
+	@JoinTable(name = "R_MealPackage_MealMenu", joinColumns = @JoinColumn(name = "MealPackage_ID"), inverseJoinColumns = @JoinColumn(name = "MealOrder_ID"))
+	public Set<MealPackage> getMealPackages() {
+		return mealPackages;
+	}
+
+	public void setMealPackages(Set<MealPackage> mealPackages) {
+		this.mealPackages = mealPackages;
+	}
+
+}

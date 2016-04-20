@@ -3,16 +3,19 @@ package com.flowingsun.webapp.interceptor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.stereotype.Repository;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+@Repository
 public class Platform_CheckLogin implements HandlerInterceptor  {
 
 	@Override
 	public boolean preHandle(HttpServletRequest request,
 			HttpServletResponse response, Object handler) throws Exception {
 		// TODO Auto-generated method stub
-		return false;
+		//return false;
+		return true;
 	}
 
 	@Override

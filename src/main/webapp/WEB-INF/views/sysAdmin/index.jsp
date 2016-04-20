@@ -34,6 +34,10 @@
 		var obj_spanUserName = Ext.get("span_userName");
 		obj_spanUserName.dom.textContent = userName;
 	}) */
+	/* window.onerror=function(){
+		console.warn(arguments);
+		return true;
+	} */
 </script>
 </head>
 <body>

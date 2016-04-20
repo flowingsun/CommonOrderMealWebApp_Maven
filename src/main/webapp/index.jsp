@@ -22,7 +22,9 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 </head>
-
+<script>
+	window.location.href="/CommonOrderMealWepApp_Maven/userplatform/index.html";
+</script>
 <body>
 	Spring-Mvc page
 	<br> teststr:${teststr}

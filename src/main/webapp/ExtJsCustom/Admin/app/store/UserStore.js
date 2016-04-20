@@ -11,5 +11,5 @@ Ext.define("OrderMealAdmin.store.UserStore",{
 			totalProperty:'results'
 		}
 	},
-	autoLoad:true
+	autoLoad:false
 });
