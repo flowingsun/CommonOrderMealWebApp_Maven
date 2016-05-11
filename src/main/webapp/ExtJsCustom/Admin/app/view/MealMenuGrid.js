@@ -2,23 +2,32 @@ Ext.define('OrderMealAdmin.view.MealMenuGrid', {
 	extend : 'Ext.grid.Panel',
 	alias : 'widget.MealMenuGrid',
 	store : 'MealMenuStore',
-	height : 540,
-	width : 500,
+//	height : 540,
+//	width : 500,
+	height : '100%',
+	width : '100%',
 	selType : 'checkboxmodel',
 	multiSelect : true,
 	columnLines : true,// 表格的竖线
+//	scrollable : true,
 	initComppnent : function() {
+		console.log(arguments);
 		this.callParent(arguments);
 	},
 	border : 0,
 	columns : [ {
 		text : 'id',
 		dataIndex : 'mealMenuId',
-		width : 100,
+		width : 30,
 		locked : true
 	}, {
 		text : '菜单名称',
-		dataIndex : 'mealMenuName',
+		dataIndex : 'menuName',
+		width : 140,
+		locked : true
+	},{
+		text : '所属餐厅',
+		dataIndex : 'canteenName',
 		width : 140,
 		locked : true
 	}, {
@@ -31,7 +40,7 @@ Ext.define('OrderMealAdmin.view.MealMenuGrid', {
 		width : 150
 	}, {
 		text : '菜单状态',
-		dataIndex : 'mealMenuStatus',
+		dataIndex : 'menuType',
 		width : 150,
 		xtype : 'booleancolumn',
 		trueText : "<font color='green'>供应中</font>",

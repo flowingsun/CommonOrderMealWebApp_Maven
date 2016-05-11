@@ -1,5 +1,5 @@
 Ext.define('OrderMealAdmin.view.CanteenPanel',{
-	extend:'Ext.panel.Panel',
+	extend:'Ext.form.Panel',
 	alias:'widget.CanteenPanel',
 	title:'餐厅管理',
 	width:"100%",

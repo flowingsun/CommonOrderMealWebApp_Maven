@@ -9,7 +9,7 @@ Ext.define('OrderMealAdmin.view.CanteenForm', {
 	frame : true,
 	items : [ {
 		xtype : 'fieldset',
-		title : '用户信息',
+		title : '餐厅信息',
 		layout : {
 			type : 'table',
 			columns : 2

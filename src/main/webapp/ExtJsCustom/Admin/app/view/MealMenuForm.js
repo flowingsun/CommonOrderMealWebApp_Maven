@@ -9,7 +9,7 @@ Ext.define('OrderMealAdmin.view.MealMenuForm', {
 	frame : true,
 	items : [ {
 		xtype : 'fieldset',
-		title : '用户信息',
+		title : '菜单信息',
 		layout : {
 			type : 'table',
 			columns : 2
@@ -27,12 +27,12 @@ Ext.define('OrderMealAdmin.view.MealMenuForm', {
 		},
 		items : [ {
 			xtype : 'textfield',
-			fieldLabel : '餐厅名称',
-			name : 'MealMenuName'
+			fieldLabel : '菜单名称',
+			name : 'menuName'
 		}, {
 			xtype : 'combobox',
-			name : 'MealMenuStatus',
-			fieldLabel : '餐厅状态',
+			name : 'menuType',
+			fieldLabel : '菜单类型',
 			editable : false,
 			store : Ext.create('Ext.data.Store', {
 				fields : [ 'str', 'value' ],

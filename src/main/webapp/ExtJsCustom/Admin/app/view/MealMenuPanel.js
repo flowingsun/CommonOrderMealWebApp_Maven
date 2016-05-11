@@ -1,5 +1,5 @@
 Ext.define('OrderMealAdmin.view.MealMenuPanel',{
-	extend:'Ext.panel.Panel',
+	extend:'Ext.form.Panel',
 	alias:'widget.MealMenuPanel',
 	title:'菜单管理',
 	width:"100%",

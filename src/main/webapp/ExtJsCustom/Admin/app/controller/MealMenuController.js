@@ -26,7 +26,7 @@ Ext.define('OrderMealAdmin.controller.MealMenuController',
 					"MealMenuGrid button[text='添加']" : {
 						click : function(btn, o) {
 							Ext.create('Ext.window.Window', {
-								title : '添加用户',
+								title : '添加菜单',
 								modal : true,
 								buttons : [ {
 									xtype : 'button',
@@ -50,7 +50,7 @@ Ext.define('OrderMealAdmin.controller.MealMenuController',
 					"MealMenuGrid button[text='修改']" : {
 						click : function(btn, o) {
 							var win = Ext.create('Ext.window.Window', {
-								title : '修改用户',
+								title : '修改菜单',
 								modal : true,
 								buttons : [ {
 									xtype : 'button',
@@ -76,11 +76,30 @@ Ext.define('OrderMealAdmin.controller.MealMenuController',
 							win.show();
 						}
 					},
+					"MealMenuGrid button[text='查看菜式']" : {
+						click : function(btn, o) {
+							var win = Ext.create('Ext.window.Window', {
+								title : '查看菜式',
+								modal : true,
+								items : [ {
+									xtype : 'MealMenuForm',
+									border : 0
+								} ]
+							});
+							var grid = btn.ownerCt.ownerCt;
+							var records = grid.getSelectionModel()
+									.getSelection();
+							win.child('MealMenuForm').loadRecord(records[0]);
+							win.show();
+						}
+					},
 					"MealMenuGrid" : {
 						select : this.checkEdit,
 						deselect : this.checkEdit,
 						afterrender : function(panel, opts) {
-							panel.getStore().load();
+							if(panel.ownerCt.ownerCt.xtype!="window"){
+								panel.getStore().load();
+							}
 						}
 					},
 					"MealMenuGrid pagingtoolbar" : {

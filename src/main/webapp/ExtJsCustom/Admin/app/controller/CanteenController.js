@@ -50,8 +50,9 @@ Ext.define('OrderMealAdmin.controller.CanteenController',
 					"CanteenGrid button[text='修改']" : {
 						click : function(btn, o) {
 							var win = Ext.create('Ext.window.Window', {
-								title : '修改用户',
+								title : '修改餐厅',
 								modal : true,
+								// resizable : false,
 								buttons : [ {
 									xtype : 'button',
 									text : '修改',
@@ -73,6 +74,35 @@ Ext.define('OrderMealAdmin.controller.CanteenController',
 							var records = grid.getSelectionModel()
 									.getSelection();
 							win.child('CanteenForm').loadRecord(records[0]);
+							win.show();
+						}
+					},
+					"CanteenGrid button[text='查看菜单']" : {
+						click : function(btn, o) {
+							var win = Ext.create('Ext.window.Window', {
+								title : '查看菜单',
+								modal : true,
+								resizable : false,
+								scrollable : true,
+								width : 800,
+								height : 540,
+								items : [ {
+									xtype : 'MealMenuPanel',
+									border : 0
+								} ]
+							});
+							var grid = btn.ownerCt.ownerCt;
+							var records = grid.getSelectionModel()
+									.getSelection();
+							// debugger;
+							// console.log(records[0].raw)
+							var menuGrid = win.child('MealMenuPanel').child(
+									'MealMenuGrid');
+							menuGrid.getStore().load({
+								params : {
+									'canteenId' : records[0].raw.canteenId
+								}
+							});
 							win.show();
 						}
 					},
@@ -108,9 +138,12 @@ Ext.define('OrderMealAdmin.controller.CanteenController',
 						.query("CanteenGrid button[text='修改']")[0];
 				var btnDelete = Ext.ComponentQuery
 						.query("CanteenGrid button[text='停用']")[0];
+				var btnShowMealMenu = Ext.ComponentQuery
+						.query("CanteenGrid button[text='查看菜单']")[0];
 				var num = grid.getSelectionModel().getSelection().length;
 				btnEdit.setDisabled(num != 1);
 				btnDelete.setDisabled(num < 1);
+				btnShowMealMenu.setDisabled(num != 1)
 			},
 			addCanteen : function(btn, o) {
 				var form = btn.ownerCt.ownerCt.child('CanteenForm');

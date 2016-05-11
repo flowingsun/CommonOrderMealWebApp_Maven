@@ -2,8 +2,10 @@ Ext.define('OrderMealAdmin.view.UserGrid', {
 	extend : 'Ext.grid.Panel',
 	alias : 'widget.UserGrid',
 	store : 'UserStore',
-	height : 540,
-	width : 500,
+//	height : 540,
+//	width : 500,
+	height : '100%',
+	width : '100%',
 	selType : 'checkboxmodel',
 	multiSelect : true,
 	columnLines : true,// 表格的竖线

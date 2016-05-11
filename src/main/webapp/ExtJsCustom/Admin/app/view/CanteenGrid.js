@@ -14,7 +14,7 @@ Ext.define('OrderMealAdmin.view.CanteenGrid', {
 	columns : [ {
 		text : 'id',
 		dataIndex : 'canteenId',
-		width : 100,
+		width : 30,
 		locked : true
 	}, {
 		text : '餐厅名称',
@@ -54,6 +54,11 @@ Ext.define('OrderMealAdmin.view.CanteenGrid', {
 		xtype : 'button',
 		text : '停用',
 		icon : 'ExtJsCustom/images/delete.gif',
+		disabled : true
+	} , {
+		xtype : 'button',
+		text : '查看菜单',
+		icon : 'ExtJsCustom/images/application_view_list.png',
 		disabled : true
 	} ],
 	dockedItems : [ {
