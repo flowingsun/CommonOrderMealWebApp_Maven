@@ -9,11 +9,14 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd
 http://www.springframework.org/schema/mvc   
 http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
-	<!-- 自动扫描controller包下的所有类，使其认为spring mvc的控制器 -->
-	<context:component-scan base-package="com.flowingsun.webapp.controller" />
+	<!-- 自动扫描com.flowingsun.webapp.controller包下的所有类，做为spring mvc的控制器 -->
+	<context:component-scan base-package="com.flowingsun.webapp.controller">
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
 	<!--- StringHttpMessageConverter bean -->
-	<bean id = "stringHttpMessageConverter" class =
-	"org.springframework.http.converter.StringHttpMessageConverter"/>
+	<bean id="stringHttpMessageConverter"
+		class="org.springframework.http.converter.StringHttpMessageConverter" />
 
 	<!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射 -->
 	<bean
@@ -21,7 +24,6 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 		<property name="messageConverters">
 			<list>
 				<ref bean="mappingJacksonHttpMessageConverter" />
-				<!-- 新增的StringMessageConverter bean -->
 				<ref bean="stringHttpMessageConverter" />
 			</list>
 		</property>

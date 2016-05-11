@@ -12,8 +12,8 @@
 	<context:property-placeholder location="classpath:database.properties" />
 
 
-	<!-- 扫描com.flowingsun.webapp包下所有标注@Service的服务组件 -->
-	<context:component-scan base-package="com.flowingsun.webapp.domain">
+	<!-- 扫描com.flowingsun.webapp包下所有标注为Spring注解的服务组件(除controller注解) -->
+	<context:component-scan base-package="com.flowingsun.webapp">
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
