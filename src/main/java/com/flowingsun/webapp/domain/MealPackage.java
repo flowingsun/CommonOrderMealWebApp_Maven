@@ -15,12 +15,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.codehaus.jackson.map.annotate.JsonSerialize;
-
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.flowingsun.webapp.util.CustomDatetimeSerializer;
 
 @Entity
-public class MealPackage {
+public class MealPackage extends BaseDomain {
 	private int mealPackageId;
 	private String packageName;// 套餐名称
 	private String mealTimeType;// 早/中/晚餐

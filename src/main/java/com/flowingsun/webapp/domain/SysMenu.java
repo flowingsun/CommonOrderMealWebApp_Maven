@@ -18,7 +18,7 @@ import javax.persistence.Transient;
  */
 @Entity
 @Table(name="SysMenu")
-public class SysMenu implements Serializable {
+public class SysMenu extends BaseDomain implements Serializable {
 	private static final long serialVersionUID = 3L;
 
 	private int ID;//ID

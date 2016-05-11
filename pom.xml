@@ -14,9 +14,10 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<mysql-connector-java.version>5.1.24</mysql-connector-java.version>
 		<servlet-api.version>3.0.1</servlet-api.version>
-		<jackson.version>1.9.12</jackson.version>
+		<jackson.version.old>1.9.12</jackson.version.old>
+		<jackson.version>2.7.3</jackson.version>
 		<log4j.version>1.2.17</log4j.version>
-		<spring.version>4.0.2.RELEASE</spring.version>
+		<spring.version>4.2.5.RELEASE</spring.version>
 		<c3p0.version>0.9.5-pre6</c3p0.version>
 		<junit.version>4.11</junit.version>
 		<jstl.version>1.2</jstl.version>
@@ -93,9 +94,28 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+
+		<!-- Jackson Config -->
+		<!-- <dependency> <groupId>org.codehaus.jackson</groupId> <artifactId>jackson-mapper-asl</artifactId> 
+			<version>${jackson.version.old}</version> </dependency> -->
 		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-hibernate4</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
 		<dependency>
@@ -109,6 +129,9 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
+
+		<!-- <dependency> <groupId>com.alibaba</groupId> <artifactId>dubbo</artifactId> 
+			<version>2.4.9</version> </dependency> -->
 	</dependencies>
 	<build>
 		<plugins>

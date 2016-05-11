@@ -18,10 +18,10 @@ public interface MealMenuService {
 	 * @author flowingsun
 	 * @description 获取餐厅分页信息
 	 */
-	public List<MealMenu> GetPagingCanteens(Map<String, Object> params, int page,
+	public List<MealMenu> GetPagingMealMenus(Map<String, Object> params, int page,
 			int pageSize);
 
-	public void Update(MealMenu user);
+	public void Update(MealMenu mealMenu);
 
-	public void Save(MealMenu user) throws Exception;
+	public void Save(MealMenu mealMenu) throws Exception;
 }

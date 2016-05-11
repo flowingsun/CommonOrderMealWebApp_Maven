@@ -47,4 +47,12 @@ public interface MealMenuDao {
 	 */
 	public List<MealMenu> GetPagingMealMenus(Map<String, Object> params, int page,
 			int pageSize);
+	
+
+	/**
+	 * @return
+	 * @author flowingsun
+	 * @description 获取当前可用菜单id
+	 */
+	public List<Integer> GetAvailableMealMenuIds();
 }

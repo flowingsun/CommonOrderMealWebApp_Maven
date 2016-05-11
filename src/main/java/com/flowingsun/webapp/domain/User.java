@@ -16,9 +16,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
-import org.codehaus.jackson.map.annotate.JsonSerialize;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.flowingsun.webapp.util.CustomDateSerializer;
 
 /**
@@ -27,7 +26,7 @@ import com.flowingsun.webapp.util.CustomDateSerializer;
  */
 @Entity
 @Table(name = "UserBaseInfo")
-public class User implements Serializable {
+public class User extends BaseDomain implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

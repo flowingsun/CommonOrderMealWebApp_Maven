@@ -4,9 +4,9 @@
  */
 package com.flowingsun.webapp.domain;
 
+import java.util.Date;
 import java.util.Set;
 
-import javax.management.relation.Role;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,8 +17,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
-import org.hibernate.annotations.GenericGenerator;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.flowingsun.webapp.util.CustomDatetimeSerializer;
 
 /**
  * 
@@ -26,13 +29,18 @@ import org.hibernate.annotations.GenericGenerator;
  * @description 菜单实体
  */
 @Entity
-public class MealMenu {
+public class MealMenu extends BaseDomain {
 
 	private int mealMenuId;
 	private String menuName;
 	private int menuType;
+	private int canteenId;
+	private Date createTime;// 创建时间
+	private Date editTime;// 编辑时间
 	private String description;
+
 	private Set<MealPackage> mealPackages;
+	private Canteen canteen;
 
 	@Id
 	// @GeneratedValue(generator = "system-uuid")
@@ -63,6 +71,34 @@ public class MealMenu {
 		this.menuType = menuType;
 	}
 
+	public int getCanteenId() {
+		return canteenId;
+	}
+
+	public void setCanteenId(int canteenId) {
+		this.canteenId = canteenId;
+	}
+
+	@Column(updatable = false)
+	@Temporal(TemporalType.TIMESTAMP)
+	@JsonSerialize(using = CustomDatetimeSerializer.class)
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
+	@JsonSerialize(using = CustomDatetimeSerializer.class)
+	public Date getEditTime() {
+		return editTime;
+	}
+
+	public void setEditTime(Date editTime) {
+		this.editTime = editTime;
+	}
+
 	public String getDescription() {
 		return description;
 	}
@@ -81,4 +117,13 @@ public class MealMenu {
 		this.mealPackages = mealPackages;
 	}
 
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "CanteenID")
+	public Canteen getCanteen() {
+		return canteen;
+	}
+
+	public void setCanteen(Canteen canteen) {
+		this.canteen = canteen;
+	}
 }

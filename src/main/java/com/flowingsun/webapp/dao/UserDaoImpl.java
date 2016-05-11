@@ -20,7 +20,7 @@ import com.flowingsun.webapp.domain.User;
 
 @Repository("userDao")
 @Transactional(rollbackFor=Throwable.class)
-public class UserDaoImpl extends BaseDao<User> implements UserDao {
+public class UserDaoImpl implements UserDao {
 
 	@Autowired
 	private SessionFactory sessionFactory;

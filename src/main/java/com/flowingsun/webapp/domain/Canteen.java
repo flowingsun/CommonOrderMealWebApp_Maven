@@ -15,9 +15,10 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
-import org.codehaus.jackson.map.annotate.JsonSerialize;
+import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.flowingsun.webapp.util.CustomDatetimeSerializer;
 
 /**
@@ -26,19 +27,21 @@ import com.flowingsun.webapp.util.CustomDatetimeSerializer;
  */
 @Entity
 @Table(name = "Canteen")
-public class Canteen {
+@Component
+public class Canteen extends BaseDomain {
 	private int canteenId;
 	private String canteenName;// 餐厅名称
 	private int canteenStatus;// 餐厅状态
 	private String description;// 备注
 	private Date createTime;// 创建时间
 	private Date editTime;// 编辑时间
-	
+
 	private Set<MealPackage> mealPackages = new HashSet<MealPackage>();
+
 
 	@Id
 	@GeneratedValue
-	@Column(name="ID", updatable = false)
+	@Column(name = "ID", updatable = false)
 	public int getCanteenId() {
 		return canteenId;
 	}
@@ -90,9 +93,10 @@ public class Canteen {
 	public void setEditTime(Date editTime) {
 		this.editTime = editTime;
 	}
-	
+
 	@JsonIgnore
-	@OneToMany(targetEntity = MealPackage.class, fetch = FetchType.LAZY, cascade = { CascadeType.ALL }, mappedBy = "canteen")
+	@OneToMany(targetEntity = MealPackage.class, fetch = FetchType.LAZY, cascade = {
+			CascadeType.ALL }, mappedBy = "canteen")
 	public Set<MealPackage> getMealPackages() {
 		return mealPackages;
 	}

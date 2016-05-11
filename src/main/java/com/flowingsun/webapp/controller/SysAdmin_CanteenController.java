@@ -1,8 +1,10 @@
 package com.flowingsun.webapp.controller;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -37,14 +39,18 @@ public class SysAdmin_CanteenController {
 	 */
 	@RequestMapping("/GetPagingCanteens")
 	@ResponseBody
-	public Object GetPagingUsers(HttpServletRequest request,
-			HttpServletResponse response,
+	public Object GetPagingUsers(HttpServletRequest request, HttpServletResponse response,
 			@ModelAttribute("ExtjsPaging") ExtjsPaging model) throws Exception {
 		Map<String, Object> params = new HashMap<String, Object>();
-		String username = request.getParameter("canteenName");
-		params.put("canteenName", username);
-		List<Canteen> userList = canteenService.GetPagingCanteens(params,
-				model.getPage(), model.getPageSize());
+		Iterator<Entry<String, String[]>> iterator = request.getParameterMap().entrySet().iterator();
+		while (iterator.hasNext()) {
+			@SuppressWarnings({ "rawtypes", "unchecked" })
+			Map.Entry<String,String[]> entry = (Map.Entry<String,String[]>) iterator.next();
+			String key = entry.getKey();
+			String val = entry.getValue()[0];
+			params.put(key, val);
+		}
+		List<Canteen> userList = canteenService.GetPagingCanteens(params, model.getPage(), model.getPageSize());
 		return userList;
 	}
 

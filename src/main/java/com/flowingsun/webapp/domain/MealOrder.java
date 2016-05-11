@@ -20,7 +20,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "MealOrder")
-public class MealOrder implements Serializable {
+public class MealOrder extends BaseDomain implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -32,8 +32,8 @@ public class MealOrder implements Serializable {
 	private String telePhone;// 用户电话
 	private String userLocation;// 用户位置
 	private Date orderTime;// 订餐时间
-	private String restaurantName;// 餐厅名称
-	private int restaurantID;// 餐厅ID
+	private String canteenName;// 餐厅名称
+	private int canteenID;// 餐厅ID
 	private String supplyTimeType;// 用餐餐时类型
 	private Date beginSupplyTime;// 起始订餐时间
 	private Date endSupplyTime;// 终止订餐时间
@@ -114,20 +114,20 @@ public class MealOrder implements Serializable {
 		this.orderTime = orderTime;
 	}
 
-	public String getRestaurantName() {
-		return restaurantName;
+	public String getCanteenName() {
+		return canteenName;
 	}
 
-	public void setRestaurantName(String restaurantName) {
-		this.restaurantName = restaurantName;
+	public void setCanteenName(String canteenName) {
+		this.canteenName = canteenName;
 	}
 
-	public int getRestaurantID() {
-		return restaurantID;
+	public int getCanteenID() {
+		return canteenID;
 	}
 
-	public void setRestaurantID(int restaurantID) {
-		this.restaurantID = restaurantID;
+	public void setCanteenID(int canteenID) {
+		this.canteenID = canteenID;
 	}
 
 	public String getSupplyTimeType() {
