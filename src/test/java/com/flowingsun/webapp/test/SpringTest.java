@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.flowingsun.webapp.dao.MealMenuDao;
-import com.flowingsun.webapp.domain.Canteen;
+import com.flowingsun.webapp.dao.*;
+import com.flowingsun.webapp.domain.*;
 
 import junit.framework.Assert;
 
