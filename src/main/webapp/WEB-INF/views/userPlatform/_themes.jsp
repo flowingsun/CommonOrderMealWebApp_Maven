@@ -19,12 +19,13 @@
 	href="<%=basePath2%>Resources/bootstrap/dist/css/bootstrap-theme.css"
 	type="text/css"></link>
 <link rel="stylesheet"
-	href="<%=basePath2%>Resources/css/Platform/Main.css"
-	type="text/css"></link>
+	href="<%=basePath2%>Resources/css/Platform/Main.css" type="text/css"></link>
 <script type="text/javascript"
 	src="<%=basePath2%>Resources/JavaScripts/json2.js"></script>
 <script type="text/javascript"
 	src="<%=basePath2%>Resources/JavaScripts/jquery-1.11.0.js"></script>
 <script type="text/javascript"
 	src="<%=basePath2%>Resources/bootstrap/dist/js/bootstrap.js"></script>
+<link href="<%=basePath%>/Resources/Image/java_coffee_cup_logo.png"
+	type="image/x-icon" rel="icon" />
 

@@ -33,7 +33,6 @@
 <script src="<%=basePath%>/Resources/JavaScripts/jquery-ui-1.10.4/ui/jquery.ui.effect-fold.js"></script>
 <link href="<%=basePath%>/Resources/JavaScripts/jquery-ui-1.10.4/themes/base/jquery.ui.all.css" rel="stylesheet">
 <link href="<%=basePath%>/Resources/JavaScripts/jquery-ui-1.10.4/themes/base/jquery-ui.css" rel="stylesheet">
-<link href="<%=basePath%>/Resources/Image/favicon.ico" type="image/x-icon" rel="icon" /> 
 <style>
 body {
     font-family: "Trebuchet MS","Arial","Helvetica","Verdana","sans-serif";

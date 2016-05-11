@@ -127,15 +127,27 @@
 						热门<small><a href="/course">更多»</a></small>
 					</h4>
 					<ul class="row">
-						<li class="item col-xs-12 col-sm-6 col-md-4 col-lg-4">re1</li>
-						<li class="item col-xs-12 col-sm-6 col-md-4 col-lg-4">
-							<div style="width: 100px; height: 100px;">re2</div>
+						<li class="item col-xs-6 col-sm-6 col-md-4 col-lg-4">
+							<div style="display: block;">re1</div>
+							<div style="display: block;">
+								<img class="col-xs-6 col-sm-6 col-md-4 col-lg-4"
+								src="<%=basePath%>/Resources/Image/java_coffee_cup_logo.png" />
+							</div>
 						</li>
-						<li class="item col-xs-12 col-sm-6 col-md-4 col-lg-4">
-							<div style="width: 100px; height: 100px;">re3</div>
+						<li class="item col-xs-6 col-sm-6 col-md-4 col-lg-4">
+							<img class="col-xs-6 col-sm-6 col-md-4 col-lg-4"
+							src="<%=basePath%>/Resources/Image/java_coffee_cup_logo.png" />
+							re2
 						</li>
-						<li class="item col-xs-12 col-sm-6 col-md-4 col-lg-4">
-							<div style="width: 100px; height: 100px;">re4</div>
+						<li class="item col-xs-6 col-sm-6 col-md-4 col-lg-4">
+							<img class="col-xs-6 col-sm-6 col-md-4 col-lg-4"
+							src="<%=basePath%>/Resources/Image/java_coffee_cup_logo.png" />
+							re3
+						</li>
+						<li class="item col-xs-6 col-sm-6 col-md-4 col-lg-4">
+							<img class="col-xs-6 col-sm-6 col-md-4 col-lg-4"
+							src="<%=basePath%>/Resources/Image/java_coffee_cup_logo.png" />
+							re4
 						</li>
 					</ul>
 				</div>
@@ -149,15 +161,16 @@
 						商家<small><a href="/course">更多»</a></small>
 					</h4>
 					<ul class="row">
-						<li class="item col-xs-12 col-sm-6 col-md-4 col-lg-4">re1</li>
-						<li class="item col-xs-12 col-sm-6 col-md-4 col-lg-4">
-							<div style="width: 100px; height: 100px;">re2</div>
+						<li class="item col-xs-6 col-sm-6 col-md-4 col-lg-4">sj1</li>
+						<li class="item col-xs-6 col-sm-6 col-md-4 col-lg-4">
+							sj2
 						</li>
-						<li class="item col-xs-12 col-sm-6 col-md-4 col-lg-4">
-							<div style="width: 100px; height: 100px;">re3</div>
+						<li class="item col-xs-6 col-sm-6 col-md-4 col-lg-4">
+							sj3
 						</li>
-						<li class="item col-xs-12 col-sm-6 col-md-4 col-lg-4">
-							<div style="width: 100px; height: 100px;">re4</div>
+						<li class="item col-xs-6 col-sm-6 col-md-4 col-lg-4">
+							sj4
+							<!-- <div style="width: 100px; height: 100px;">re4</div> -->
 						</li>
 					</ul>
 				</div>

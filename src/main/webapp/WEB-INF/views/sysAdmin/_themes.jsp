@@ -17,3 +17,4 @@
 <link rel="stylesheet"
 	href="<%=basePath2%>Resources/JavaScripts/ExtJS/resources/css/ext-all-gray-debug.css"
 	type="text/css"></link>
+<link href="<%=basePath%>/Resources/Image/java_coffee_cup_logo.png" type="image/x-icon" rel="icon" /> 
