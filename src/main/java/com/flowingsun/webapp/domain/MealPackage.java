@@ -15,10 +15,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.stereotype.Component;
+
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.flowingsun.webapp.util.CustomDatetimeSerializer;
 
 @Entity
+@Component
 public class MealPackage extends BaseDomain {
 	private int mealPackageId;
 	private String packageName;// 套餐名称

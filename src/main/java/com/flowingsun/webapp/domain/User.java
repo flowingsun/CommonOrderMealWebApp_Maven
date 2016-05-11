@@ -16,6 +16,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.stereotype.Component;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.flowingsun.webapp.util.CustomDateSerializer;
@@ -26,6 +28,7 @@ import com.flowingsun.webapp.util.CustomDateSerializer;
  */
 @Entity
 @Table(name = "UserBaseInfo")
+@Component
 public class User extends BaseDomain implements Serializable {
 
 	private static final long serialVersionUID = 1L;

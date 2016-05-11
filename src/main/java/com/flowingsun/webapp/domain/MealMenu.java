@@ -20,6 +20,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.stereotype.Component;
+
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.flowingsun.webapp.util.CustomDatetimeSerializer;
 
@@ -29,6 +31,7 @@ import com.flowingsun.webapp.util.CustomDatetimeSerializer;
  * @description 菜单实体
  */
 @Entity
+@Component
 public class MealMenu extends BaseDomain {
 
 	private int mealMenuId;

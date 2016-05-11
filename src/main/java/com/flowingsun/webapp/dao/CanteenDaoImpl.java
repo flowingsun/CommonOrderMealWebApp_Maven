@@ -8,6 +8,7 @@ import java.util.Map.Entry;
 
 import org.hibernate.criterion.MatchMode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,6 +22,9 @@ public class CanteenDaoImpl implements CanteenDao {
 	@Autowired
 	// @Qualifier("baseDao")
 	private BaseDao<Canteen> baseDao;
+	
+	@Autowired
+	Canteen _canteen;
 
 	@Override
 	public List<Canteen> FindAllCanteens() {
@@ -42,11 +46,11 @@ public class CanteenDaoImpl implements CanteenDao {
 	public List<Canteen> GetPagingCanteens(Map<String, Object> params, int page, int pageSize) {
 		List<HSerchEntity> hses = new ArrayList<HSerchEntity>();
 		Iterator<Entry<String, Object>> iterator = params.entrySet().iterator();
-		Canteen canteen = new Canteen();// TODO--Spring.getBean
+		//Canteen canteen = new Canteen();// TODO--Spring.getBean
 		// Canteen canteen = (Canteen)
 		// SpringContext.GetContext().getBean("canteen");
 		// Canteen canteen = SpringContext.GetContext().getBean(Canteen.class);
-		Map<String, String> fieldMap = canteen.GetClassFieldMaps();
+		Map<String, String> fieldMap = _canteen.GetClassFieldMaps();
 
 		while (iterator.hasNext()) {
 			Map.Entry<String, Object> entry = iterator.next();

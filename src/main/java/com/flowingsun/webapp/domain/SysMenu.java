@@ -12,12 +12,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.springframework.stereotype.Component;
+
 /**
  * @author flowingsun
  * @description 系统菜单实体
  */
 @Entity
 @Table(name="SysMenu")
+@Component
 public class SysMenu extends BaseDomain implements Serializable {
 	private static final long serialVersionUID = 3L;
 
