@@ -38,6 +38,7 @@ public class MealMenu extends BaseDomain {
 	private String menuName;
 	private int menuType;
 	private int canteenId;
+	private int state;//状态1:启用,0:停用
 	private Date createTime;// 创建时间
 	private Date editTime;// 编辑时间
 	private String description;
@@ -72,6 +73,14 @@ public class MealMenu extends BaseDomain {
 
 	public void setMenuType(int menuType) {
 		this.menuType = menuType;
+	}
+
+	public int getState() {
+		return state;
+	}
+
+	public void setState(int state) {
+		this.state = state;
 	}
 
 	public int getCanteenId() {

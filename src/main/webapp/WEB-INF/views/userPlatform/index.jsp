@@ -1,45 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
-	pageContext.setAttribute("basePath", basePath);
-%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<%@include file="_themes.jsp"%>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>用户订餐平台</title>
-<link rel="stylesheet"
-	href="${basePath }Resources/css/Platform/Index.css" type="text/css"></link>
-</head>
+<%@include file="themes/header.jsp"%>
 <body>
-
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-				aria-controls="navbar">
-				<span class="sr-only">Toggle navigation</span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">Project name</a>
-		</div>
-		<div id="navbar" class="collapse navbar-collapse">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#contact">Contact</a></li>
-			</ul>
-		</div>
-		<!--/.nav-collapse -->
-	</div>
-	</nav>
-
+	<link rel="stylesheet"
+		href="${basePath }Resources/css/Platform/Index.css" type="text/css"></link>
+	<%@include file="themes/navigation.jsp"%>
 	<!-- 轮播插件 -->
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
@@ -126,30 +91,40 @@
 					<h4>
 						热门<small><a href="/course">更多»</a></small>
 					</h4>
-					<ul class="row">
-						<li class="item col-xs-6 col-sm-6 col-md-4 col-lg-4">
-							<div style="display: block;">re1</div>
-							<div style="display: block;">
-								<img class="col-xs-6 col-sm-6 col-md-4 col-lg-4"
-								src="<%=basePath%>/Resources/Image/java_coffee_cup_logo.png" />
+					<div class="row center">
+						<div class="item col-xs-6 col-sm-6 col-md-4 col-lg-2">
+							<div>
+								<a href="#"> <img class="img-responsive"
+									src="<%=basePath%>/Resources/Image/java_coffee_cup_logo.png" />
+									<div>re1</div>
+								</a>
 							</div>
-						</li>
-						<li class="item col-xs-6 col-sm-6 col-md-4 col-lg-4">
-							<img class="col-xs-6 col-sm-6 col-md-4 col-lg-4"
-							src="<%=basePath%>/Resources/Image/java_coffee_cup_logo.png" />
-							re2
-						</li>
-						<li class="item col-xs-6 col-sm-6 col-md-4 col-lg-4">
-							<img class="col-xs-6 col-sm-6 col-md-4 col-lg-4"
-							src="<%=basePath%>/Resources/Image/java_coffee_cup_logo.png" />
-							re3
-						</li>
-						<li class="item col-xs-6 col-sm-6 col-md-4 col-lg-4">
-							<img class="col-xs-6 col-sm-6 col-md-4 col-lg-4"
-							src="<%=basePath%>/Resources/Image/java_coffee_cup_logo.png" />
-							re4
-						</li>
-					</ul>
+						</div>
+						<div class="item col-xs-6 col-sm-6 col-md-4 col-lg-2">
+							<div>
+								<a href="#"> <img class="img-responsive"
+									src="<%=basePath%>/Resources/Image/java_coffee_cup_logo.png" />
+									<div>re2</div>
+								</a>
+							</div>
+						</div>
+						<div class="item col-xs-6 col-sm-6 col-md-4 col-lg-2">
+							<div>
+								<a href="#"> <img class="img-responsive"
+									src="<%=basePath%>/Resources/Image/java_coffee_cup_logo.png" />
+									<div>re3</div>
+								</a>
+							</div>
+						</div>
+						<div class="item col-xs-6 col-sm-6 col-md-4 col-lg-2">
+							<div>
+								<a href="#"> <img class="img-responsive"
+									src="<%=basePath%>/Resources/Image/java_coffee_cup_logo.png" />
+									<div>re4</div>
+								</a>
+							</div>
+						</div>
+					</div>
 				</div>
 				<!-- 热门END -->
 
@@ -162,16 +137,9 @@
 					</h4>
 					<ul class="row">
 						<li class="item col-xs-6 col-sm-6 col-md-4 col-lg-4">sj1</li>
-						<li class="item col-xs-6 col-sm-6 col-md-4 col-lg-4">
-							sj2
-						</li>
-						<li class="item col-xs-6 col-sm-6 col-md-4 col-lg-4">
-							sj3
-						</li>
-						<li class="item col-xs-6 col-sm-6 col-md-4 col-lg-4">
-							sj4
-							<!-- <div style="width: 100px; height: 100px;">re4</div> -->
-						</li>
+						<li class="item col-xs-6 col-sm-6 col-md-4 col-lg-4">sj2</li>
+						<li class="item col-xs-6 col-sm-6 col-md-4 col-lg-4">sj3</li>
+						<li class="item col-xs-6 col-sm-6 col-md-4 col-lg-4">sj4</li>
 					</ul>
 				</div>
 				<!-- 商家END -->
@@ -219,5 +187,6 @@
 		</div>
 	</div>
 	<!-- /.container -->
+	<%@include file="themes/footer.jsp"%>
 </body>
 </html>

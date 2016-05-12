@@ -24,6 +24,7 @@ public class UserPlatform_MainController {
 	@RequestMapping("/userplatform/index")
 	public ModelAndView indexAction() throws Exception {
 		ModelAndView mav = new ModelAndView();
+		mav.addObject("title", "首页");
 		mav.setViewName("/userPlatform/index");
 		return mav;
 	}

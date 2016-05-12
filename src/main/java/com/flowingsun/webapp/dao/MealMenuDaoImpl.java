@@ -6,10 +6,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.hibernate.Criteria;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -100,6 +102,19 @@ public class MealMenuDaoImpl implements MealMenuDao {
 		List list = query.list();
 		if(!list.isEmpty()){
 			return (List<Integer>)list;
+		}
+		return null;
+	}
+
+	@Override
+	public List<MealMenu> GetAvailableMealMenus() {
+		List<Integer> idList = GetAvailableMealMenuIds();
+		if(idList!=null && idList.size()>0){
+			Session session = sessionFactory.getCurrentSession();
+			Criteria cri = session.createCriteria(MealMenu.class);
+			cri.add(Restrictions.in("mealMenuId", idList));
+			List<MealMenu> result = cri.list();
+			return result;
 		}
 		return null;
 	}

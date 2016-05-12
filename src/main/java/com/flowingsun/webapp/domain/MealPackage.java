@@ -28,6 +28,7 @@ public class MealPackage extends BaseDomain {
 	private String mealTimeType;// 早/中/晚餐
 	private double packagePrice;// 价格
 	private String description;// 描述
+	private int state;//状态1:启用,0:停用
 	private Date createTime;
 	private Date editTime;
 
@@ -75,6 +76,14 @@ public class MealPackage extends BaseDomain {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public int getState() {
+		return state;
+	}
+
+	public void setState(int state) {
+		this.state = state;
 	}
 
 	@Column(updatable = false)

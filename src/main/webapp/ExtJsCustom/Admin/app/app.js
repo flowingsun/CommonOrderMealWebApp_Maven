@@ -43,7 +43,7 @@ Ext.onReady(function(){
 			});
 		},
 		controllers:[
-			'MainController','UserController','CanteenController','MealMenuController'
+			'MainController','UserController','CanteenController','MealMenuController','MealPackageController'
 		]
 	});
 });

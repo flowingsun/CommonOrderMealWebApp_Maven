@@ -24,4 +24,18 @@ public interface MealMenuService {
 	public void Update(MealMenu mealMenu);
 
 	public void Save(MealMenu mealMenu) throws Exception;
+	
+	/**
+	 * @return
+	 * @author flowingsun
+	 * @description 获取当前可用菜单id
+	 */
+	public List<Integer> GetAvailableMealMenuIds();
+
+	/**
+	 * @return
+	 * @author flowingsun
+	 * @description 获取当前可用菜单
+	 */
+	public List<MealMenu> GetAvailableMealMenus();
 }

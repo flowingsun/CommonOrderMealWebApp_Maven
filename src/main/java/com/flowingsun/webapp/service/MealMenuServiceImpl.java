@@ -38,4 +38,14 @@ public class MealMenuServiceImpl implements MealMenuService {
 		mealMenuDao.Save(mealMenu);
 	}
 
+	@Override
+	public List<Integer> GetAvailableMealMenuIds() {
+		return mealMenuDao.GetAvailableMealMenuIds();
+	}
+
+	@Override
+	public List<MealMenu> GetAvailableMealMenus() {
+		return mealMenuDao.GetAvailableMealMenus();
+	}
+
 }

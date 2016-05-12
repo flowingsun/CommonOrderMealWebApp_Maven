@@ -12,3 +12,18 @@
 	background: #54abd4;
 	text-decoration: none;
 }
+
+.footer div {
+	text-align: center;
+}
+
+.img-responsive {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	max-height: 500px;
+}
+
+.center {
+	text-align: center;
+}

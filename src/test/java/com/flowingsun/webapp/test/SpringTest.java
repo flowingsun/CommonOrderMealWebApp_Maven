@@ -10,7 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.flowingsun.webapp.dao.*;
-import com.flowingsun.webapp.domain.Canteen;
+import com.flowingsun.webapp.domain.*;
 import com.flowingsun.webapp.util.SpringContextUtil;
 
 import junit.framework.Assert;
@@ -59,6 +59,15 @@ public class SpringTest {
 	public void testSP() {
 		List<Integer> list = mealMenuDao.GetAvailableMealMenuIds();
 		System.out.print(list);
+		Assert.assertTrue(!list.isEmpty() && list.size() > 1);
+	}
+	
+	@Test
+	public void testMealMenus() {
+		List<MealMenu> list = mealMenuDao.GetAvailableMealMenus();
+		for(MealMenu mm : list){
+			System.out.println(mm.getMenuName());
+		}
 		Assert.assertTrue(!list.isEmpty() && list.size() > 1);
 	}
 }

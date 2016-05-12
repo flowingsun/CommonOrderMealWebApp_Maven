@@ -55,4 +55,11 @@ public interface MealMenuDao {
 	 * @description 获取当前可用菜单id
 	 */
 	public List<Integer> GetAvailableMealMenuIds();
+
+	/**
+	 * @return
+	 * @author flowingsun
+	 * @description 获取当前可用菜单
+	 */
+	public List<MealMenu> GetAvailableMealMenus();
 }
