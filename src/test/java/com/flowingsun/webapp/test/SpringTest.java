@@ -70,4 +70,11 @@ public class SpringTest {
 		}
 		Assert.assertTrue(!list.isEmpty() && list.size() > 1);
 	}
+	
+	@Test
+	public void testPoToVo(){
+		MealMenu mm = mealMenuDao.FindEnityById(1L);
+		System.out.println(mm.getMealPackages().size()+"");
+		Assert.assertTrue(true);
+	}
 }

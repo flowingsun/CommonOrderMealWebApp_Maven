@@ -117,8 +117,8 @@ Ext.define('OrderMealAdmin.controller.MealMenuController',
 				});
 			},
 
-			views : [ 'MealMenuPanel', 'MealMenuGrid', 'MealMenuSearchForm',
-					'MealMenuForm' ],
+			views : [ 'MealMenu.MealMenuPanel', 'MealMenu.MealMenuGrid', 'MealMenu.MealMenuSearchForm',
+					'MealMenu.MealMenuForm' ],
 			stores : [ 'MealMenuStore' ],
 			models : [ 'MealMenuModel' ],
 			checkEdit : function() {

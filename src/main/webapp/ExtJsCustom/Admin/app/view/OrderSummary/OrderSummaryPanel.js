@@ -1,0 +1,14 @@
+Ext.define('OrderMealAdmin.view.OrderSummary.OrderSummaryPanel',{
+	extend:'Ext.form.Panel',
+	alias:'widget.OrderSummaryPanel',
+	title:'套餐管理',
+	width:"100%",
+	height:'100%',
+	layout:'fit',
+	dockedItems:[{
+		xtype:'OrderSummarySearchForm'
+	}],
+	items:[{
+		xtype:'OrderSummaryGrid'
+	}]
+});

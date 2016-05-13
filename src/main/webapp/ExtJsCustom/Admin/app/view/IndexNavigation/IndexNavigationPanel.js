@@ -1,0 +1,14 @@
+Ext.define('OrderMealAdmin.view.IndexNavigation.IndexNavigationPanel',{
+	extend:'Ext.form.Panel',
+	alias:'widget.IndexNavigationPanel',
+	title:'套餐管理',
+	width:"100%",
+	height:'100%',
+	layout:'fit',
+	dockedItems:[{
+		xtype:'IndexNavigationSearchForm'
+	}],
+	items:[{
+		xtype:'IndexNavigationGrid'
+	}]
+});

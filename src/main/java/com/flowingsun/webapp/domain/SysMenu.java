@@ -24,7 +24,7 @@ import org.springframework.stereotype.Component;
 public class SysMenu extends BaseDomain implements Serializable {
 	private static final long serialVersionUID = 3L;
 
-	private int ID;//ID
+	private Long ID;//ID
 	private String menuName;//菜单名称
 	private String text;//菜单名称(用于ExtJs展示)
 	private String pageThemes;//跳转控件
@@ -39,10 +39,10 @@ public class SysMenu extends BaseDomain implements Serializable {
 	@Id
 	@GeneratedValue
 	@Column(name = "ID")
-	public int getID() {
+	public Long getID() {
 		return ID;
 	}
-	public void setID(int iD) {
+	public void setID(Long iD) {
 		ID = iD;
 	}
 	public String getMenuName() {

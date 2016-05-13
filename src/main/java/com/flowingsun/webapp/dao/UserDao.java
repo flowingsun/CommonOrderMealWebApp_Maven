@@ -3,17 +3,11 @@ package com.flowingsun.webapp.dao;
 import java.util.List;
 import java.util.Map;
 
+import com.flowingsun.webapp.dao.common.BaseDao;
 import com.flowingsun.webapp.domain.User;
 
-public interface UserDao {
+public interface UserDao extends BaseDao<User>  {
 
-	/**
-	 * @param 用户ID
-	 * @return User object
-	 * @description 根据ID获取用户
-	 */
-	public User FindUserByid(Long id);
-	
 	/**
 	 * @param 用户名
 	 * @return 用户基本信息
@@ -35,26 +29,6 @@ public interface UserDao {
 	 */
 	public List<User> FindAllUsers();
 	
-	/**
-	 * @return
-	 * @author flowingsun
-	 * @description 获取分页用户数据
-	 */
-	public List<User> GetPagingUsers(Map<String, Object> params, int page,
-			int pageSize);
-		
-	/**
-	 * @param 用户对象
-	 * @description 根据用户对象更新数据
-	 */
-	public void Update(User user);
-	
-	
-	/**
-	 * @param 用户对象
-	 * @description 根据用户对象新增数据
-	 */
-	public void Save(User user); 
 	
 	/**
 	 * @param userIds用户id

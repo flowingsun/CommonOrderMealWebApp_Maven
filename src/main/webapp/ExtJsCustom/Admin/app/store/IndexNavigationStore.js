@@ -1,0 +1,15 @@
+Ext.define("OrderMealAdmin.store.IndexNavigationStore",{
+	extend:'Ext.data.Store',
+	model:'OrderMealAdmin.model.IndexNavigationModel',
+	proxy:{
+		type:'ajax',
+		limitParam:'pageSize',
+		url:'/CommonOrderMealWepApp_Maven/admin/IndexNavigationManage/GetPagingIndexNavigations.html',
+		reader:{
+			type:'json',
+			root:'rows',
+			totalProperty:'results'
+		}
+	},
+	autoLoad:false
+});

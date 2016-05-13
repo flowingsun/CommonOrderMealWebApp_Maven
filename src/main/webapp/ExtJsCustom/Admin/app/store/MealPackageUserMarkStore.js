@@ -1,0 +1,15 @@
+Ext.define("OrderMealAdmin.store.MealPackageUserMarkStore",{
+	extend:'Ext.data.Store',
+	model:'OrderMealAdmin.model.MealPackageUserMarkModel',
+	proxy:{
+		type:'ajax',
+		limitParam:'pageSize',
+		url:'/CommonOrderMealWepApp_Maven/admin/MealPackageUserMarkManage/GetPagingMealPackageUserMarks.html',
+		reader:{
+			type:'json',
+			root:'rows',
+			totalProperty:'results'
+		}
+	},
+	autoLoad:false
+});

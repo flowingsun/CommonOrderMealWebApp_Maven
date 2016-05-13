@@ -25,12 +25,12 @@ public class IndexController {
 		ModelAndView mav = new ModelAndView("/test");
 		mav.setViewName("/index");
 		mav.addObject("teststr", "test");
-		User user = userService.FindUserByid(Long.valueOf(1));
-		mav.addObject(user);
+		//User user = userService.FindUserByid(Long.valueOf(1));
+		//mav.addObject(user);
 		List<User> users = userService.FindAllUsers();
-		List<Canteen> canteens = canteenService.FindAllCanteens();
+		//List<Canteen> canteens = canteenService.FindAllCanteens();
 		mav.addObject("users", users);
-		mav.addObject("canteens", canteens);
+		//mav.addObject("canteens", canteens);
 		return mav;
 	}
 

@@ -34,7 +34,7 @@ import com.flowingsun.webapp.util.CustomDatetimeSerializer;
 @Component
 public class MealMenu extends BaseDomain {
 
-	private int mealMenuId;
+	private Long mealMenuId;
 	private String menuName;
 	private int menuType;
 	private int canteenId;
@@ -51,11 +51,11 @@ public class MealMenu extends BaseDomain {
 	// @GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@GeneratedValue
 	@Column(name = "ID", unique = true, nullable = false)
-	public int getMealMenuId() {
+	public Long getMealMenuId() {
 		return mealMenuId;
 	}
 
-	public void setMealMenuId(int mealMenuId) {
+	public void setMealMenuId(Long mealMenuId) {
 		this.mealMenuId = mealMenuId;
 	}
 
@@ -120,7 +120,7 @@ public class MealMenu extends BaseDomain {
 	}
 
 	@ManyToMany(targetEntity = MealPackage.class, fetch = FetchType.EAGER)
-	@JoinTable(name = "R_MealPackage_MealMenu", joinColumns = @JoinColumn(name = "MealPackage_ID"), inverseJoinColumns = @JoinColumn(name = "MealOrder_ID"))
+	@JoinTable(name = "R_MealPackage_MealMenu", joinColumns = @JoinColumn(name = "MealMenu_ID"), inverseJoinColumns = @JoinColumn(name = "MealPackage_ID"))
 	public Set<MealPackage> getMealPackages() {
 		return mealPackages;
 	}

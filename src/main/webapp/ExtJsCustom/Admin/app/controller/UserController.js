@@ -118,8 +118,8 @@ Ext.define('OrderMealAdmin.controller.UserController',
 				});
 			},
 
-			views : [ 'UserPanel', 'UserGrid', 'UserSearchForm', 'UserForm',
-					'UserFormNewUser' ],
+			views : [ 'User.UserPanel', 'User.UserGrid', 'User.UserSearchForm', 'User.UserForm',
+					'User.UserFormNewUser' ],
 			stores : [ 'UserStore' ],
 			models : [ 'UserModel' ],
 			checkEdit : function() {

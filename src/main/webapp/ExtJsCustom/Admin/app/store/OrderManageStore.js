@@ -1,0 +1,15 @@
+Ext.define("OrderMealAdmin.store.OrderManageStore",{
+	extend:'Ext.data.Store',
+	model:'OrderMealAdmin.model.OrderManageModel',
+	proxy:{
+		type:'ajax',
+		limitParam:'pageSize',
+		url:'/CommonOrderMealWepApp_Maven/admin/OrderManageManage/GetPagingOrderManages.html',
+		reader:{
+			type:'json',
+			root:'rows',
+			totalProperty:'results'
+		}
+	},
+	autoLoad:false
+});

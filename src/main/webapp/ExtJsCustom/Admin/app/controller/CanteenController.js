@@ -128,8 +128,8 @@ Ext.define('OrderMealAdmin.controller.CanteenController',
 				});
 			},
 
-			views : [ 'CanteenPanel', 'CanteenGrid', 'CanteenSearchForm',
-					'CanteenForm' ],
+			views : [ 'Canteen.CanteenPanel', 'Canteen.CanteenGrid', 'Canteen.CanteenSearchForm',
+					'Canteen.CanteenForm' ],
 			stores : [ 'CanteenStore' ],
 			models : [ 'CanteenModel' ],
 			checkEdit : function() {

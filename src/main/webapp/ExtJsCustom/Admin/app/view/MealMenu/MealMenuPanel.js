@@ -1,0 +1,14 @@
+Ext.define('OrderMealAdmin.view.MealMenu.MealMenuPanel',{
+	extend:'Ext.form.Panel',
+	alias:'widget.MealMenuPanel',
+	title:'菜单管理',
+	width:"100%",
+	height:'100%',
+	layout:'fit',
+	dockedItems:[{
+		xtype:'MealMenuSearchForm'
+	}],
+	items:[{
+		xtype:'MealMenuGrid'
+	}]
+});

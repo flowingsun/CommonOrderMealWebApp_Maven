@@ -29,7 +29,7 @@ import com.flowingsun.webapp.util.CustomDatetimeSerializer;
 @Table(name = "Canteen")
 @Component
 public class Canteen extends BaseDomain {
-	private int canteenId;
+	private Long canteenId;
 	private String canteenName;// 餐厅名称
 	private int canteenStatus;// 餐厅状态
 	private String description;// 备注
@@ -42,11 +42,11 @@ public class Canteen extends BaseDomain {
 	@Id
 	@GeneratedValue
 	@Column(name = "ID", updatable = false)
-	public int getCanteenId() {
+	public Long getCanteenId() {
 		return canteenId;
 	}
 
-	public void setCanteenId(int canteenId) {
+	public void setCanteenId(Long canteenId) {
 		this.canteenId = canteenId;
 	}
 

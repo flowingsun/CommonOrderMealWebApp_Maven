@@ -6,9 +6,6 @@ import java.util.Map;
 import com.flowingsun.webapp.domain.MealMenu;
 
 public interface MealMenuService {
-
-
-	public List<MealMenu> FindAllMealMenus();
 	
 	/**
 	 * @param params

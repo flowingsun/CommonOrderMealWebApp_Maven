@@ -7,8 +7,6 @@ import com.flowingsun.webapp.domain.Canteen;
 import com.flowingsun.webapp.domain.User;
 
 public interface CanteenService {
-
-	public List<Canteen> FindAllCanteens();
 	
 	/**
 	 * @param params

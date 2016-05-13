@@ -43,7 +43,15 @@ Ext.onReady(function(){
 			});
 		},
 		controllers:[
-			'MainController','UserController','CanteenController','MealMenuController','MealPackageController'
+			'MainController'
+			,'UserController'
+			,'CanteenController'
+			,'MealMenuController'
+			,'MealPackageController'
+			,'MealPackageUserMarkController'
+			,'OrderManageController'
+			,'OrderSummaryController'
+			,'IndexNavigationController'
 		]
 	});
 });

@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
@@ -23,7 +24,7 @@ import com.flowingsun.webapp.util.CustomDatetimeSerializer;
 @Entity
 @Component
 public class MealPackage extends BaseDomain {
-	private int mealPackageId;
+	private Long mealPackageId;
 	private String packageName;// 套餐名称
 	private String mealTimeType;// 早/中/晚餐
 	private double packagePrice;// 价格
@@ -38,11 +39,11 @@ public class MealPackage extends BaseDomain {
 	@Id
 	@GeneratedValue
 	@Column(name = "ID", updatable = false)
-	public int getMealPackageId() {
+	public Long getMealPackageId() {
 		return mealPackageId;
 	}
 
-	public void setMealPackageId(int mealPackageId) {
+	public void setMealPackageId(Long mealPackageId) {
 		this.mealPackageId = mealPackageId;
 	}
 
@@ -117,6 +118,7 @@ public class MealPackage extends BaseDomain {
 	}
 
 	@ManyToMany(targetEntity = MealMenu.class, fetch = FetchType.LAZY)
+	@JoinTable(name = "R_MealPackage_MealMenu", joinColumns = @JoinColumn(name = "MealPackage_ID"), inverseJoinColumns = @JoinColumn(name = "MealMenu_ID"))
 	public Set<MealMenu> getMealMenus() {
 		return mealMenus;
 	}
