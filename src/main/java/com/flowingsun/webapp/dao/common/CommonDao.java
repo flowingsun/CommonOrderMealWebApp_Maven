@@ -45,7 +45,7 @@ public class CommonDao<T> extends HibernateDaoSupport {
 
 	@SuppressWarnings("unchecked")
 	public T LoadEntityById(Class<T> clazz, Object id, String idName) {
-		Session session = OpenSessionInViewFilter.class;
+		Session session = super.currentSession();
 		Criteria cri = session.createCriteria(clazz);
 		if (null == idName || idName.length() <= 0) {
 			idName = getClass().getName() + "Id";
