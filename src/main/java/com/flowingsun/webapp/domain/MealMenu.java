@@ -22,6 +22,7 @@ import javax.persistence.TemporalType;
 
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.flowingsun.webapp.util.CustomDatetimeSerializer;
 
@@ -119,7 +120,8 @@ public class MealMenu extends BaseDomain {
 		this.description = description;
 	}
 
-	@ManyToMany(targetEntity = MealPackage.class, fetch = FetchType.EAGER)
+	@JsonIgnore
+	@ManyToMany(targetEntity = MealPackage.class, fetch = FetchType.LAZY)
 	@JoinTable(name = "R_MealPackage_MealMenu", joinColumns = @JoinColumn(name = "MealMenu_ID"), inverseJoinColumns = @JoinColumn(name = "MealPackage_ID"))
 	public Set<MealPackage> getMealPackages() {
 		return mealPackages;
@@ -129,7 +131,8 @@ public class MealMenu extends BaseDomain {
 		this.mealPackages = mealPackages;
 	}
 
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JsonIgnore
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "CanteenID")
 	public Canteen getCanteen() {
 		return canteen;

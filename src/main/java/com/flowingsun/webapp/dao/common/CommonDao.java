@@ -2,23 +2,32 @@ package com.flowingsun.webapp.dao.common;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate4.SessionFactoryUtils;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
+import org.springframework.orm.hibernate4.support.OpenSessionInViewFilter;
 import org.springframework.stereotype.Repository;
 
 import com.flowingsun.webapp.dao.common.HSerchEntity;
 
 @Repository("commonDao")
-public class CommonDao<T> {
+public class CommonDao<T> extends HibernateDaoSupport {
 
-	@Autowired
-	private SessionFactory sessionFactory;
+	@Resource
+	public void setSessionFacotry(SessionFactory sessionFacotry) {
+		super.setSessionFactory(sessionFacotry);
+	}
+	// @Autowired
+	// private SessionFactory sessionFactory;
 
 	public List<T> LoadAllEntities(Class<T> clazz) {
-		Session session = sessionFactory.getCurrentSession();
+		Session session = super.getSessionFactory().getCurrentSession();
 		Criteria cri = session.createCriteria(clazz);
 		@SuppressWarnings("unchecked")
 		List<T> result = cri.list();
@@ -26,7 +35,7 @@ public class CommonDao<T> {
 	}
 
 	public List<T> LoadTopEntities(Class<T> clazz, int topNum) {
-		Session session = sessionFactory.getCurrentSession();
+		Session session = super.getSessionFactory().getCurrentSession();
 		Criteria cri = session.createCriteria(clazz);
 		cri.setMaxResults(topNum);
 		@SuppressWarnings("unchecked")
@@ -34,17 +43,9 @@ public class CommonDao<T> {
 		return result;
 	}
 
-	public T LoadEntityById(Class<T> clazz, int id, String idName) {
-		return this.LoadEntityById(clazz, id + "", idName);
-	}
-
-	public T LoadEntityById(Class<T> clazz, long id, String idName) {
-		return this.LoadEntityById(clazz, Long.toString(id), idName);
-	}
-
 	@SuppressWarnings("unchecked")
-	public T LoadEntityById(Class<T> clazz, String id, String idName) {
-		Session session = sessionFactory.getCurrentSession();
+	public T LoadEntityById(Class<T> clazz, Object id, String idName) {
+		Session session = OpenSessionInViewFilter.class;
 		Criteria cri = session.createCriteria(clazz);
 		if (null == idName || idName.length() <= 0) {
 			idName = getClass().getName() + "Id";
@@ -54,6 +55,7 @@ public class CommonDao<T> {
 		if (null != result && result.size() > 0) {
 			return (T) cri.list().get(0);
 		}
+
 		return null;
 	}
 
@@ -72,7 +74,7 @@ public class CommonDao<T> {
 	}
 
 	public List<T> LoadPagingEntities(Class<T> clazz, List<HSerchEntity> params, int page, int pageSize) {
-		Session session = sessionFactory.getCurrentSession();
+		Session session = super.getSessionFactory().getCurrentSession();
 		Criteria cri = session.createCriteria(clazz);
 		if (params != null && params.size() > 0) {
 			for (HSerchEntity hse : params) {
@@ -82,7 +84,7 @@ public class CommonDao<T> {
 					// .sqlRestriction(clazz.getName() + "." + hse.ColumnName +
 					// "=?" , hse.ColumnValue + "'",new Type().));
 				} else {
-					cri.add(Restrictions.like(hse.ColumnName, (String)hse.ColumnValue, hse.HMachMode));
+					cri.add(Restrictions.like(hse.ColumnName, (String) hse.ColumnValue, hse.HMachMode));
 				}
 			}
 		}
@@ -95,7 +97,7 @@ public class CommonDao<T> {
 
 	// protected List<T> LoadPagingEntities(String hql, int page, int pageSize)
 	// {
-	// Session session = sessionFactory.getCurrentSession();
+	// Session session = super.getSessionFactory().getCurrentSession();
 	// Criteria cri = session.createCriteria(getClass());
 	// cri.addQueryHint(hql);
 	// cri.setFirstResult((page - 1) * pageSize);
@@ -106,15 +108,15 @@ public class CommonDao<T> {
 	// }
 
 	public void SaveEntity(T entity) {
-		sessionFactory.getCurrentSession().save(entity);
+		super.getSessionFactory().getCurrentSession().save(entity);
 	}
 
 	public void UpdateEntity(T entity) {
-		sessionFactory.getCurrentSession().update(entity);
+		super.getSessionFactory().getCurrentSession().update(entity);
 	}
 
 	public void DeleteEntity(T entity) {
-		sessionFactory.getCurrentSession().delete(entity);
+		super.getSessionFactory().getCurrentSession().delete(entity);
 	}
 
 }

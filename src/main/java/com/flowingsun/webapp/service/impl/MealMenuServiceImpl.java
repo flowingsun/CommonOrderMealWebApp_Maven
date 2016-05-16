@@ -19,6 +19,11 @@ public class MealMenuServiceImpl implements MealMenuService {
 	private MealMenuDao mealMenuDao;
 
 	@Override
+	public MealMenu getMealMenuById(Long id) {
+		return mealMenuDao.FindEnityById(id);
+	}
+
+	@Override
 	public List<MealMenu> GetPagingMealMenus(Map<String, Object> params, int page, int pageSize) {
 		List<MealMenu> list = mealMenuDao.GetPagingEntities(params, page, pageSize);
 		return list;

@@ -18,6 +18,7 @@ import javax.persistence.TemporalType;
 
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.flowingsun.webapp.util.CustomDatetimeSerializer;
 
@@ -107,6 +108,7 @@ public class MealPackage extends BaseDomain {
 		this.editTime = editTime;
 	}
 
+	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "CanteenID")
 	public Canteen getCanteen() {

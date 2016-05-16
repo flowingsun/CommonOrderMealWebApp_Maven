@@ -10,8 +10,7 @@
     http://www.springframework.org/schema/aop   
     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd  
 	http://www.springframework.org/schema/context   
-	http://www.springframework.org/schema/context/spring-context-3.0.xsd 
-    ">
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	<!-- 使用C3P0数据源，MySQL数据库 -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close">

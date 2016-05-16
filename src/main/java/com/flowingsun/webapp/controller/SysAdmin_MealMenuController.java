@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,7 +19,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.flowingsun.webapp.domain.ExtjsPaging;
 import com.flowingsun.webapp.domain.FormMessage;
 import com.flowingsun.webapp.domain.MealMenu;
+import com.flowingsun.webapp.domain.MealPackage;
 import com.flowingsun.webapp.service.MealMenuService;
+import com.flowingsun.webapp.vo.MealMenuVo;
 
 @Controller
 @RequestMapping("/admin/mealMenuManage")
@@ -95,4 +98,12 @@ public class SysAdmin_MealMenuController {
 	// return result;
 	// }
 
+	@RequestMapping("/test")
+	@ResponseBody
+	public Object test(HttpServletRequest request, Long id) {
+		MealMenu mealMenu = this.mealMenuService.getMealMenuById(id);
+		Set<MealPackage> mp = mealMenu.getMealPackages();
+		mp.size();
+		return mp;
+	}
 }
