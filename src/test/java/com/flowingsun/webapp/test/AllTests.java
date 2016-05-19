@@ -5,7 +5,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ SpringTest.class })
+@SuiteClasses({ SpringTest.class, HibernateTest.class })
 public class AllTests {
 
 }
